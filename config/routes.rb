@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: { format: "json" } do
-    resources :orders, only: :index
-    resources :users, only: :index
+    resources :orders, only: [:index, :show]
+    resources :users, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
