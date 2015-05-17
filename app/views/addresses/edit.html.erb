@@ -1,0 +1,17 @@
+<%= form_for @address do |f| %>
+
+  <div>
+    <%= f.text_field :street1, placeholder: "Street 1" %>
+    <%= f.text_field :street2, placeholder: "Street 2" %>
+    <%= f.text_field :city, placeholder: "City" %>
+  </div>
+
+  <div>
+    <%= f.text_field :state, placeholder: "State" %>
+    <%= f.text_field :zip, placeholder: "Zip" %>
+  </div>
+
+
+  <%= f.submit "submit"%>
+
+<% end %>
