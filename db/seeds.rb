@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+Address.destroy_all
 Order.destroy_all
 User.destroy_all
-Address.destroy_all
+
 
 orders = Order.create(
 	[

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			flash[:welcome] = "Thanks for signing up, #{@user.name}!"
+			flash[:welcome] = "Thanks for signing up, #{@user.name}! Enter your mailing address!"
 			redirect_to new_address_path
 		else
 			render :new
