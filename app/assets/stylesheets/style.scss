@@ -1,0 +1,81 @@
+@import '_variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(to bottom right,#2989d8 0, 50%,#7F96A8 100%);
+	color: #f6f6f6;
+	font-family: Montserrat, helvetica neue;
+	font-weight: 400;
+	font-size: 105%;
+}
+
+#container {
+	height: 100%;
+}
+
+
+//HEADER
+header {
+	background: rgba(205, 5, 100, 0.25);
+	padding: $margin;
+	opacity: .85;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	> div {
+		flex: 1;
+	}
+	div.login {
+		text-align: right;
+	}
+	h1 {
+		color: #f6f6f6;
+		span {
+			color: #BFD1E0;
+		}
+	}
+}
+
+//FORM PAGES
+#form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+	div {
+		flex: 1;
+		display: flex;
+		flex-direction: column
+	}
+	form {
+		input {
+			background: $blue/1.1;
+			padding: $margin;
+			margin: $margin/2 0;
+		}
+	}
+}
+
+::-webkit-input-placeholder {
+	color: $blue/1.4;
+}
