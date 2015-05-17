@@ -1,7 +1,15 @@
 class OrdersController < ApplicationController
 	
-	def new
+  def index
+  end
+
+
+  def new
 		@order = Order.new
 	end
+
+
+
+
 
 end

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show]
     resources :users, only: [:index, :show]
   end
-  
 
   root 'users#new'
 
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
   #orders
   resources :orders
   get '/new' => 'orders#new', as: :new_order_path
+  get '/admin/orders' => 'orders#index'
 
 
   

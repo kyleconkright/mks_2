@@ -1,26 +1,12 @@
-<!-- <form id="create_user" data-remote="true">
-	<input name="name" type="text" placeholder="name">
-	<input name="email" type="text" placeholder="email address">
-	<input name="password" type="password" placeholder="password">
-	<input name="confirm_password" type="password" placeholder="confirm password">
-	<button type="submit">Submit</button>
-</form>
-
-
-<script>
-	$('form#create_user').on('submit', function(e){
-
-		var name = $('input[name="name"]').val();
-		var email = $('input[name="email"]').val();
-
-		e.preventDefault();
-		$.ajax('/newuser',{
-            data:  '{"name": "'+name+'", "email": "'+email+'", "password":"password"}',
-            type:    'POST',
-            contentType: 'application/json',
-            success: function(){alert('success')},
-            error:   function(){alert('fail')}
-        });
-	})
-</script>
- -->
+<div id="container">
+<!-- 	<%= @orders.inspect %> -->
+	<ul>
+	<% @orders.each do |order| %>
+		<li><%= order.id %></li>
+		<li><%= order.quantity %></li>
+		<li><%= order.size %></li>
+		<li><%= order.created_at %></li>
+		<li><%= order.customer.name %></li>
+	<% end %>
+	</ul>
+</div>
