@@ -1,26 +1,38 @@
-<!-- <form id="create_user" data-remote="true">
-	<input name="name" type="text" placeholder="name">
-	<input name="email" type="text" placeholder="email address">
-	<input name="password" type="password" placeholder="password">
-	<input name="confirm_password" type="password" placeholder="confirm password">
-	<button type="submit">Submit</button>
-</form>
 
 
-<script>
-	$('form#create_user').on('submit', function(e){
+<div id="order-container">
+	<div id="order">
+		<!--SIZE QTY FORM-->	
+		<form id="quote_form" data-remote="true">
+			<input name="text" type="text" placeholder="Say Something">
+			<select name="size">
+				<option disabled selected="selected">Pick a size</option>
+				<option value="xsml">Extra Small</option>
+				<option value="sml">Small</option>
+				<option value="med">Medium</option>
+				<option value="lrg">Large</option>
+				<option value="xlg">Extra Large</option>
+			</select>
+			<input name="quantity" type="number" placeholder="How many?">
+			<button type="submit">Get Quote</button>
+		</form>
 
-		var name = $('input[name="name"]').val();
-		var email = $('input[name="email"]').val();
+		<!--CONFIRM PURCHASE FORM-->
+		<form id="purchase_form" data-remote="true" style="display: none;">
+			<p class="total"></p>
+			<button type="submit">Confirm Purchase</button>
+		</form>
 
-		e.preventDefault();
-		$.ajax('/newuser',{
-            data:  '{"name": "'+name+'", "email": "'+email+'", "password":"password"}',
-            type:    'POST',
-            contentType: 'application/json',
-            success: function(){alert('success')},
-            error:   function(){alert('fail')}
-        });
-	})
-</script>
- -->
+		<div id="purchase_confirmed" style="display: none;">
+			<i class="fa fa-check-circle"></i>
+			<p>Success!</p>
+			<p>Your shirt is on it's way to this address:</p>
+			<p><%= current_user.address.street1 %> <%= current_user.address.street2 %></p>
+			<p><%= current_user.address.city %>, <%= current_user.address.state %> <%= current_user.address.zip %></p>
+		</div>
+	</div>
+
+	<div id="preview">
+		<img src="http://ga.kyleconkright.com/mks/assets/img/shirt.png">
+	</div>
+</div>
