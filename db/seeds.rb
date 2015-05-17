@@ -21,9 +21,9 @@ orders = Order.create(
 
 users = User.create(
 	[
-		{name: "kyle", email: "kyle@example.com", password_digest:"password"},
-		{name: "mike", email: "mike@example.com", password_digest:"password"},
-		{name: "sarah", email: "sarah@example.com", password_digest:"password"}
+		{name: "kyle", email: "kyle@example.com", password:"password"},
+		{name: "mike", email: "mike@example.com", password:"password"},
+		{name: "sarah", email: "sarah@example.com", password:"password"}
 	]
 )
 

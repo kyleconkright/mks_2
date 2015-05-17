@@ -1,0 +1,30 @@
+<% if @user.errors.any? %>
+<%= pluralize(@user.errors.count, "error") %> prevented you from signing up for an account:
+
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>   
+      <li class="list-group-item list-group-item-danger"><%= msg.downcase %></li>
+    <% end %>
+  </ul>            
+
+<% end %>
+
+
+<%= form_for @user do |f| %>
+  
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :email, placeholder: "Email Address" %>
+  </div>
+
+  <div>
+    <%= f.password_field :password, placeholder:"Password" %>
+    <%= f.password_field :password_confirmation, placeholder:"Confirm Password" %>
+  </div>
+
+  <%= f.submit "submit"%>
+
+
+  
+
+<% end %>
