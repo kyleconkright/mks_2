@@ -67,12 +67,13 @@ header {
 		display: flex;
 		flex-direction: column
 	}
-	form {
-		input {
-			background: $blue/1.1;
-			padding: $margin;
-			margin: $margin/2 0;
-		}
+}
+
+form {
+	input, select {
+		background: $blue/1.1;
+		padding: $margin;
+		margin: $margin/2 0;
 	}
 }
 

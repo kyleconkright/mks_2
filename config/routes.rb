@@ -24,7 +24,12 @@ Rails.application.routes.draw do
   #orders
   resources :orders
   get '/new' => 'orders#new', as: :new_order_path
+
   get '/admin/orders' => 'orders#index'
+
+  post '/getquote' => 'orders#get_quote'
+  post '/confirm' => 'orders#create_remote_order'
+
 
 
   

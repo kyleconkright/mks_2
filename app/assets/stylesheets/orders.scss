@@ -1,47 +1,37 @@
 @import '_variables.scss';
 
 div#order-container {
-	min-height: 100%;
+	height: 100%;
 	display: flex;
 	> div {
 		flex: 1;
 	}
-	div#user-info {
-		flex: .75;
-		background: linear-gradient(to bottom right,#2989d8 0, 50%,#7F96A8 100%);
+
+	div#order {
 		display: flex;
-		flex-direction: column;
-		header {
-			background: rgba(205, 5, 100, 0.25);
-			padding: $margin;
-			font-size: 2.25em;
-			font-weight: 700;
-			opacity: .85;
-			h1 {
-				color: #f6f6f6;
-				span {
-					color: #BFD1E0;
-				}
-			}
-		}
-		#form-container {
+		align-items: center;
+		form {
 			flex: 1;
-			padding: $margin;
 			display: flex;
-			// align-items: center;
-			form {
-				
-				input {
-					border-bottom: 1px dashed $blue/1.2;
-					padding: $margin/2 0;
-					display: block;
-				}
+			align-items: center;
+			flex-direction: column;
+		}
+		div#purchase_confirmed {
+			flex: 1;
+			text-align: center;
+			font-size: 1.5em;
+			line-height: 2em;
+			i {
+				font-size: 3em;
 			}
 		}
-		
 	}
-	div#order-shirt {
-		align-self: center;
+	
+	div#preview {
+		flex:1;
+		background: #f6f6f6;
+		display: flex;
+		align-items: center;
 		img {
 			max-width: 80%;
 			margin: 0 auto;

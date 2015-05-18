@@ -1,12 +1,39 @@
-<div id="container">
-<!-- 	<%= @orders.inspect %> -->
-	<ul>
-	<% @orders.each do |order| %>
-		<li><%= order.id %></li>
-		<li><%= order.quantity %></li>
-		<li><%= order.size %></li>
-		<li><%= order.created_at %></li>
-		<li><%= order.customer.name %></li>
-	<% end %>
-	</ul>
+
+
+<div id="order-container">
+	<div id="order">
+		<!--SIZE QTY FORM-->	
+		<form id="quote_form" data-remote="true">
+			<input name="text" type="text" placeholder="Say Something">
+			<select name="size">
+				<option disabled selected="selected">Pick a size</option>
+				<option value="xsml">Extra Small</option>
+				<option value="sml">Small</option>
+				<option value="med">Medium</option>
+				<option value="lrg">Large</option>
+				<option value="xlg">Extra Large</option>
+			</select>
+			<input name="quantity" type="number" placeholder="How many?">
+			<button type="submit">Get Quote</button>
+		</form>
+
+		<!--CONFIRM PURCHASE FORM-->
+		<form id="purchase_form" data-remote="true" style="display: none;">
+			<p class="total"></p>
+			<button type="submit">Confirm Purchase</button>
+		</form>
+
+		<div id="purchase_confirmed" style="display: none;">
+			<i class="fa fa-check-circle"></i>
+			<p>Success!</p>
+			<p>Your shirt is on it's way to this address:</p>
+			<p><%= current_user.address.street1 %> <%= current_user.address.street2 %></p>
+			<p><%= current_user.address.city %>, <%= current_user.address.state %> <%= current_user.address.zip %></p>
+		</div>
+	</div>
+
+	<div id="preview">
+		<img src="http://ga.kyleconkright.com/mks/assets/img/shirt.png">
+	</div>
+
 </div>
